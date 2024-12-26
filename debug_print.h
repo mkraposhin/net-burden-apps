@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-/// The class represents a NULL output stream which 
+/// @brief The class represents a NULL output stream which
 ///doesn't output spicified data anywhere
 struct NullStream
 {
@@ -14,6 +14,8 @@ NullStream& operator << (NullStream & null_stream, const T& val)
     return null_stream;
 }
 
+/// @brief The class template specifies the default (std::cout) stream
+/// for debug print output
 template<bool debug_enabled>
 struct SelectStream
 {
@@ -22,19 +24,22 @@ struct SelectStream
 template<bool debug_enabled>
 std::ostream &SelectStream<debug_enabled>::stream_object_ = std::cout;
 
+/// @brief A template specialization which is meant for the case
+/// when debug output is turned off
 template<>
 struct SelectStream<false>
 {
     static NullStream stream_object_;
 };
 
-/// The class is used to switch and manage debug print
+/// @brief The class is used to switch and manage debug print
+/// at compile time
 struct DebugPrint
 {
-    /// Enables or disables debug printing
+    /// @brief Enables or disables debug printing
     static constexpr bool enable_print = true;
 
-    /// Sets type of output stream (null object when debug printing is disabled)
+    /// @brief Sets a type of output stream (null object when debug printing is disabled)
     /// and std::cout when debug printing is enabled
     static std::conditional<enable_print,std::ostream,NullStream>::type &
         stream;
