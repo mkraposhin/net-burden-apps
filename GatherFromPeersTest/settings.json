@@ -1,0 +1,34 @@
+{
+    "gathering_peer":
+    {
+        "n_local_sockets": 3,
+        "my_port_min": 30000,
+        "nb_port_min": 20000,
+        "my_ip_address": "127.0.0.1",
+        "no_remote_sockets": 2,
+        "nb_ip_addresses": ["127.0.0.2", "127.0.0.3"]
+    },
+    "sending_peers":
+    {
+        "127.0.0.2":
+        {
+            "n_local_sockets": 2,
+            "my_port_min": 20000,
+            "nb_port_min": 30000,
+            "my_ip_address": "127.0.0.2",
+            "no_remote_sockets": 3,
+            "nb_ip_addresses": "127.0.0.1",
+            "sleep_ms": 1000
+        },
+        "127.0.0.3":
+        {
+            "n_local_sockets": 2,
+            "my_port_min": 20000,
+            "nb_port_min": 30000,
+            "my_ip_address": "127.0.0.3",
+            "no_remote_sockets": 3,
+            "nb_ip_addresses": "127.0.0.1",
+            "sleep_ms": 1000
+        }
+    }
+}
