@@ -131,7 +131,7 @@ protected:
     void SendToSpecifiedPeerPorts
     (
         SizeType k,
-        const std::string peer_ip_address,
+        const std::string& peer_ip_address,
         SizeType start_port,
         SizeType n_remote_ports
     );
